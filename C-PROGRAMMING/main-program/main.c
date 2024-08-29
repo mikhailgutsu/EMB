@@ -12,6 +12,7 @@
 #include <windows.h>
 #include "generic/logger/src/logger.c"
 #include "generic/dinamic/src/menu.c"
+#include "generic/triggers/src/triggers.c"
 
 //<-------------------------- Defines
 #define loop() for(;;)
@@ -24,6 +25,8 @@ int main()
     log_message("This is a sample log message.");
     log_message("Logging an integer: %d", 42);
     SetColor(8);
+
+    system("pause");
 
     mainMenuNr1();
     Sleep(200);

@@ -23,5 +23,6 @@ void mainMenuNr15();
 void mainMenuNr16();
 void mainMenuNr17();
 void mainMenuNr18();
+int mainGeneric();
 
 #endif // DINAMIC_H

@@ -237,14 +237,12 @@ int mainGeneric()
         }
         if (checkerBUTTON_ENTER() == E_OK)
         {
-
-
+            return optionM;
             Sleep(100);
         }
         if (checkerBUTTON_ESCAPE() == E_OK)
         {
-
-
+            return 0;
             Sleep(100);
         }
 

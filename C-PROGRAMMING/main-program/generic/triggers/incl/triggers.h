@@ -3,6 +3,7 @@
 
 #include <windows.h>
 
+int init_triggers();
 char checkerBUTTON_UP();
 char checkerBUTTON_DOWN();
 char checkerBUTTON_ENTER();

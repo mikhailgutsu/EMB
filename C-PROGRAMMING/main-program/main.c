@@ -16,6 +16,12 @@
 
 //<-------------------------- Defines
 #define loop() for(;;) 
+#define E_NOT_OK 0x00
+#define E_OK     0x01
+
+//<-------------------------- USER PREDEF
+int mainGeneric();
+int init();
 
 //<-------------------------- MAIN
 int main()
@@ -24,9 +30,26 @@ int main()
     log_message("Logger initialized.");
     log_message("This is a sample log message.");
     log_message("Logging an integer: %d", 42);
-    SetColor(8);
+    SetColor(7);
 
     system("pause");
 
     return 0;
+}
+
+//<--------------------------- EXEC
+int mainGeneric()
+{
+    char RetVal = E_NOT_OK;
+
+
+
+    return RetVal;
+}
+
+int init()
+{
+    init_logger();
+    init_triggers();
+    init_dinamic();
 }

@@ -6,6 +6,7 @@
 #include <stdarg.h>
 #include <time.h>
 
+int init_logger();
 void SetColor(int color);
 void log_message(const char *format, ...);
 

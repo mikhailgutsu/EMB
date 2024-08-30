@@ -1,5 +1,10 @@
 #include "../incl/menu.h"
 
+int init_dinamic()
+{
+    return 0x01;
+}
+
 void mainMenuNr1()
 {
     system("cls");

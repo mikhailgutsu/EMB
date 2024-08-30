@@ -1,5 +1,10 @@
 #include "../incl/logger.h"
 
+int init_logger()
+{
+    return 0x01;
+}
+
 /***********************
         0: Black
         1: Blue

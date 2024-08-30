@@ -26,14 +26,9 @@ int init();
 //<-------------------------- MAIN
 int main()
 {
-    SetColor(2);
-    log_message("Logger initialized.");
-    log_message("This is a sample log message.");
-    log_message("Logging an integer: %d", 42);
-    SetColor(7);
+    init();
 
     system("pause");
-
     return 0;
 }
 
@@ -49,7 +44,62 @@ int mainGeneric()
 
 int init()
 {
-    init_logger();
-    init_triggers();
-    init_dinamic();
+    char RetVal = E_NOT_OK;
+    int c_err = 0;
+
+    //  LOG INIT
+    if (init_logger() == E_OK) 
+    {
+        SetColor(2);
+            log_message("Logger initialized without errors. [<0.2s]");
+            c_err++;
+                SetColor(7);
+    }
+    else if (init_logger() != E_OK) 
+    {
+        SetColor(4);
+            log_message("Logger initialized with errors.");
+                SetColor(7);
+    }Sleep(200);
+
+    //  TRIGGER INIT
+    if (init_triggers() == E_OK) 
+    {
+        SetColor(2);
+            log_message("Trigger initialized without errors. [<0.2s]");
+            c_err++;
+                SetColor(7);
+    }
+    else if (init_triggers() != E_OK) 
+    {
+        SetColor(4);
+            log_message("Trigger initialized with errors.");
+                SetColor(7);
+    }Sleep(200);
+    
+    //  DINAMIC INIT
+    if (init_dinamic() == E_OK) 
+    {
+        SetColor(2);
+            log_message("DI-MENU initialized without errors. [<0.2s]");
+            c_err++;
+                SetColor(7);
+    }
+    else if (init_dinamic() != E_OK) 
+    {
+        SetColor(4);
+            log_message("DI-MENU initialized with errors.");
+                SetColor(7);
+    }Sleep(200);
+
+    //ERR HANDLE
+    if (c_err == 3)
+    {   
+        SetColor(2);
+            log_message("WELCOME");
+                SetColor(7);
+        RetVal = E_OK;
+    }Sleep(200);
+
+    return RetVal;
 }

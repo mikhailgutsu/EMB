@@ -15,7 +15,7 @@
 #include "generic/triggers/src/triggers.c"
 
 //<-------------------------- Defines
-#define loop() for(;;)
+#define loop() for(;;) 
 
 //<-------------------------- MAIN
 int main()
@@ -25,27 +25,6 @@ int main()
     log_message("This is a sample log message.");
     log_message("Logging an integer: %d", 42);
     SetColor(8);
-
-    system("pause");
-
-    mainMenuNr1();
-    Sleep(200);
-    mainMenuNr2();
-    Sleep(200);
-    mainMenuNr3();
-    Sleep(200);
-    mainMenuNr4();
-    Sleep(200);
-    mainMenuNr5();
-    Sleep(200);
-    mainMenuNr6();
-    Sleep(200);
-    mainMenuNr7();
-    Sleep(200);
-    mainMenuNr8();
-    Sleep(200);
-    mainMenuNr9();
-    Sleep(200);
 
     system("pause");
 

@@ -4,6 +4,7 @@
 #include <windows.h>
 #include <stdio.h>
 
+int init_dinamic();
 void mainMenuNr1();
 void mainMenuNr2();
 void mainMenuNr3();

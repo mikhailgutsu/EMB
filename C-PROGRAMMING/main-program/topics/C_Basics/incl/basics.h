@@ -3,4 +3,6 @@
 
 #include <stdio.h>
 
+int init_basics();
+
 #endif // BASICS_H

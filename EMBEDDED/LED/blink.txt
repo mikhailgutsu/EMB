@@ -1,0 +1,50 @@
+	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);  // Turn on the LED
+	HAL_Delay(200);
+	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_SET);  // Turn off the LED
+	HAL_Delay(200);
+
+/////////////////////
+
+In STM32 microcontrollers, the Hardware Abstraction Layer (HAL) provides several functions for introducing delays. The most commonly used delay functions are:
+
+1. HAL_Delay()
+Usage: HAL_Delay(uint32_t Delay)
+Description: This function provides a delay in milliseconds. It uses the system tick timer (SysTick) to achieve the delay.
+Example:
+c
+Копировать код
+HAL_Delay(1000); // Delay for 1000 ms (1 second)
+2. HAL_GetTick()
+Usage: uint32_t HAL_GetTick(void)
+Description: Returns the current value of the tick counter. This function is useful when you need to measure elapsed time or create custom delay functions.
+Example:
+c
+Копировать код
+uint32_t start = HAL_GetTick();
+// Some operation
+while ((HAL_GetTick() - start) < 1000) {
+    // Wait for 1000 ms
+}
+3. Microsecond Delay (using DWT or TIM)
+If you need a more precise delay (in microseconds), you can use the DWT (Data Watchpoint and Trace) unit if available or a timer.
+
+Using DWT for microsecond delay:
+c
+Копировать код
+static inline void Delay_us(uint32_t us) {
+    uint32_t start = DWT->CYCCNT;
+    uint32_t cycles = (HAL_RCC_GetHCLKFreq() / 1000000L) * us;
+    while ((DWT->CYCCNT - start) < cycles);
+}
+Using a timer (TIM) for microsecond delay:
+You can configure a timer to generate interrupts or polling for more precise delays in microseconds. Here's a basic example using a timer:
+
+c
+Копировать код
+void TIMx_Delay_us(TIM_HandleTypeDef *htim, uint32_t us) {
+    __HAL_TIM_SET_COUNTER(htim, 0);  // Set the counter value to 0
+    while (__HAL_TIM_GET_COUNTER(htim) < us);  // Wait until the counter reaches the us value
+}
+Note: Replace TIMx with your specific timer instance.
+
+These are the common methods to implement delays using the HAL in STM32. Depending on your requirements (millisecond or microsecond delays), you can choose the appropriate function.

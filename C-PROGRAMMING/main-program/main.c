@@ -1,9 +1,10 @@
-/*********************************************
+/******************************************************************************
 *
-*   PROGRAMMING C TUTORIAL [Version 1.0]
-*   (c) https://github.com/mikhailgutsu
+*                       PROGRAMMING C TUTORIAL [Version 1.0]
+*                       (c) https://github.com/mikhailgutsu
+*   CORE: https://www.geeksforgeeks.org/c-programming-language/?ref=outind
 *
-**********************************************/
+*******************************************************************************/
 
 //<-------------------------- Generic Includes
 #include <stdio.h>

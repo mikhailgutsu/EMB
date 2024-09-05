@@ -19,7 +19,7 @@
 #define E_NOT_OK 0x00
 #define E_OK     0x01
 
-//<-------------------------- Type Defs
+//<-------------------------- Type Defs (EMBEDDED / AUTOMOTIVE)
 #ifndef AUTOSAR_DATATYPES_H
 #define AUTOSAR_DATATYPES_H
 
